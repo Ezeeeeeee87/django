@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Estudiante, Profesor, Curso, Entregable
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Estudiante, Profesor, Curso
+from .forms import EstudianteForm
+from .utils import asignar_estudiante_a_curso
 
 # Create your views here.
 def index(request):
@@ -30,3 +32,18 @@ def detalle_profesor(request, pk):
 def lista_cursos(request):
     cursos = Curso.objects.all()
     return render(request, 'web/cursos_list.html', {'cursos': cursos})
+
+def crear_estudiante(request):
+    if request.method == "POST":
+        form = EstudianteForm(request.POST)
+        if form.is_valid():
+            estudiante = form.save()
+            curso_id = request.POST.get("curso")
+            curso = Curso.objects.get(pk=curso_id)
+            asignar_estudiante_a_curso(estudiante, curso)
+            return redirect("web:lista_estudiantes")
+    else:
+        form = EstudianteForm()
+
+    cursos = Curso.objects.all()
+    return render(request, "web/crear_estudiante.html", {"form": form, "cursos": cursos})

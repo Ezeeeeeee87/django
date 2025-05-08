@@ -52,7 +52,7 @@
             <a href="{% url 'web:detalle_estudiante' estudiante.pk %}">
                 {{ estudiante.nombre }} {{ estudiante.apellido }}
             </a>
-            <div class="detalle">{{ estudiante.email }} - {{ estudiante.profesion }}</div>
+            <div class="detalle">{{ estudiante.email }} - {{ estudiante.edad }}</div>
         </li>
         {% endfor %}
     </ul>

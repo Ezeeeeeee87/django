@@ -1,0 +1,17 @@
+<!-- templates/web/profesor_detail.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Profesor</title>
+</head>
+<body>
+    <h1>Detalle del Profesor</h1>
+    <p><strong>Nombre:</strong> {{ profesor.nombre }}</p>
+    <p><strong>Apellido:</strong> {{ profesor.apellido }}</p>
+    <p><strong>Email:</strong> {{ profesor.email }}</p>
+    <p><strong>Profesión:</strong> {{ profesor.profesion }}</p>
+
+    <a href="{% url 'lista_profesores' %}">Volver a la lista</a>
+</body>
+</html>

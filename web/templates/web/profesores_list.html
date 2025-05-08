@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Estudiantes</title>
+    <title>Lista de Profesores</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,14 +45,14 @@
     </style>
 </head>
 <body>
-    <h1>Lista de Estudiantes</h1>
+    <h1>Lista de Profesores</h1>
     <ul>
-        {% for estudiante in estudiantes %}
+        {% for profesor in profesores %}
         <li>
-            <a href="{% url 'web:detalle_estudiante' estudiante.pk %}">
-                {{ estudiante.nombre }} {{ estudiante.apellido }}
+            <a href="{% url 'web:detalle_profesor' profesor.pk %}">
+                {{ profesor.nombre }} {{ profesor.apellido }}
             </a>
-            <div class="detalle">{{ estudiante.email }} - {{ estudiante.profesion }}</div>
+            <div class="detalle">{{ profesor.email }} - {{ profesor.profesion }}</div>
         </li>
         {% endfor %}
     </ul>

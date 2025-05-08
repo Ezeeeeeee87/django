@@ -4,25 +4,69 @@
     <meta charset="UTF-8">
     <title>Inicio</title>
     <style>
-        body { font-family: Arial; background-color: #9b9b9b; padding: 20px; }
-        h1 { color: #1a1a1a; }
-        a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 15px;
-            background-color: #52b1ed;
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            border-radius: 5px;
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/img/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
         }
-        a:hover {
-            background-color: #055cae91;
+
+        /* Capa de oscurecimiento */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        a.button {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #52b1ed;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        a.button:hover {
+            background-color: #055cae;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenidos a mi WEB</h1>
-    <a href="{% url 'web:lista_estudiantes' %}">Ver lista de estudiantes</a>
+    <div class="overlay">
+        <h1>Bienvenidos a mi WEB</h1>
+
+        <div class="btn-container">
+            <a class="button" href="{% url 'web:lista_estudiantes' %}">Ver lista de estudiantes</a>
+            <a class="button" href="{% url 'web:lista_profesores' %}">Ver lista de profesores</a>
+            <a class="button" href="{% url 'web:lista_cursos' %}">Ver lista de cursos</a>
+        </div>
+    </div>
 </body>
-    <a href="{% url 'web:lista_profesores' %}">Ver lista de profesores</a>
 </html>

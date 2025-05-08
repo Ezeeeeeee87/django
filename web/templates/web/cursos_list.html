@@ -14,7 +14,7 @@
     <h1>Lista de Cursos</h1>
     <ul>
         {% for curso in cursos %}
-            <li><strong>{{ curso.nombre }}</strong> - Comisión: {{ curso.comision }}</li>
+            <li><strong>{{ curso.nombre }}</strong> - Camada: {{ curso.camada }}</li>
         {% empty %}
             <li>No hay cursos disponibles.</li>
         {% endfor %}

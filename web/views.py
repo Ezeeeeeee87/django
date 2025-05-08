@@ -26,3 +26,7 @@ def lista_profesores(request):
 def detalle_profesor(request, pk):
     profesor = get_object_or_404(Profesor, pk=pk)
     return render(request,'web/profesor_detail.html', {'profesor' : profesor})
+
+def lista_cursos(request):
+    cursos = Curso.objects.all()
+    return render(request, 'web/cursos_list.html', {'cursos': cursos})

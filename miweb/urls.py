@@ -22,5 +22,6 @@ urlpatterns = [
     path("", views.index, name="index"),
     path('estudiantes/', views.lista_estudiantes, name='lista_estudiantes'),
     path('profesores/', views.lista_profesores, name='lista_profesores'),
+    path('cursos/', views.lista_cursos, name='lista_cursos'),
     path("web/", include("web.urls")),
 ]

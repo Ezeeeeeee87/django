@@ -19,7 +19,7 @@ class Profesor(models.Model):
     
 class Curso(models.Model):
     nombre= models.CharField(max_length=100)
-    camada= models.IntegerField()
+    comision= models.IntegerField()
     def __str__(self):
         return self.nombre
 

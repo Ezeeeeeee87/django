@@ -33,4 +33,5 @@ class Camada(models.Model):
         return f"{self.curso.nombre} - Camada {self.numero}"
 
     def tiene_cupo(self):
-        return self.estudiantes.count() < 10
+        return self.estudiantes.count() < 5
+

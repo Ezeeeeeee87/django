@@ -1,0 +1,17 @@
+<!-- templates/web/estudiante_detail.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Estudiante</title>
+</head>
+<body>
+    <h1>Detalle del Estudiante</h1>
+    <p><strong>Nombre:</strong> {{ estudiante.nombre }}</p>
+    <p><strong>Apellido:</strong> {{ estudiante.apellido }}</p>
+    <p><strong>Email:</strong> {{ estudiante.email }}</p>
+    <p><strong>Profesión:</strong> {{ estudiante.profesion }}</p>
+
+    <a href="{% url 'lista_estudiantes' %}">Volver a la lista</a>
+</body>
+</html>
